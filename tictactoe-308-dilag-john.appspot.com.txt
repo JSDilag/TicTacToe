@@ -1,0 +1,4 @@
+The deployed Appspot app is not the conventional URL Professor McKenna requested.
+
+
+tictactoe-308-dilag-john.appspot.com
