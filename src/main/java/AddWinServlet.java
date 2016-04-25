@@ -47,11 +47,11 @@ public class AddWinServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
 
-            resp.sendRedirect("/home.jsp");
-            return;
+//            resp.sendRedirect("/home.jsp");
+//            return;
 
         }
 
-        resp.sendRedirect("/home.jsp");
+//        resp.sendRedirect("/home.jsp");
     }
 }

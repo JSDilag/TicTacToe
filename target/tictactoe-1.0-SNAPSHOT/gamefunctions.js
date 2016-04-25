@@ -230,7 +230,7 @@ $(document).ready(function() {
      
          if(t4 == t5 && t4 == t6 && t4 != null){
              if(t4 == playersShape){
-                 window.location = "/win";
+                 addWin();
                  document.getElementById("notify").innerHTML = "You Win!";
              }else{
                  document.getElementById("notify").innerHTML = "Computer Wins!";
@@ -239,7 +239,7 @@ $(document).ready(function() {
          }
          if(t7 == t8 && t7 == t9 && t7 != null){
              if(t7 == playersShape){
-                 window.location = "/win";
+                 addWin();
                  document.getElementById("notify").innerHTML = "You Win!";
              }else{
                  document.getElementById("notify").innerHTML = "Computer Wins!";
@@ -249,7 +249,7 @@ $(document).ready(function() {
          }
          if(t1 == t4 && t7 == t1 && t1 != null){
              if(t1 == playersShape){
-                 window.location = "/win";
+                 addWin();
                  document.getElementById("notify").innerHTML = "You Win!";
              }else{
                  document.getElementById("notify").innerHTML = "Computer Wins!";
@@ -259,7 +259,7 @@ $(document).ready(function() {
          }
          if(t2 == t5 && t2 == t8 && t2 != null){
              if(t2 == playersShape){
-                 window.location = "/win";
+                 addWin();
                  document.getElementById("notify").innerHTML = "You Win!";
              }else{
                  document.getElementById("notify").innerHTML = "Computer Wins!";
@@ -269,7 +269,7 @@ $(document).ready(function() {
          }
          if(t3 == t6 && t3 == t9 && t3 != null){
              if(t3 == playersShape){
-                 window.location = "/win";
+                 addWin();
                  document.getElementById("notify").innerHTML = "You Win!";
              }else{
                  document.getElementById("notify").innerHTML = "Computer Wins!";
@@ -279,7 +279,7 @@ $(document).ready(function() {
          }
          if(t1 == t5 && t1 == t9 && t1 != null){
              if(t1 == playersShape){
-                 window.location = "/win";
+                 addWin();
                  document.getElementById("notify").innerHTML = "You Win!";
              }else{
                  document.getElementById("notify").innerHTML = "Computer Wins!";
@@ -289,7 +289,7 @@ $(document).ready(function() {
          }
          if(t3 == t5 && t3 == t7 && t3 != null){
              if(t3 == playersShape){
-                 window.location = "/win";
+                 addWin();
                  document.getElementById("notify").innerHTML = "You Win!";
              }else{
                  document.getElementById("notify").innerHTML = "Computer Wins!";
