@@ -145,65 +145,69 @@ $(document).ready(function() {
      function computersTurn(){
          var compTurnUsed = false;
          var not = document.getElementById("notify");
+         var turndelay;
          if(!theresAWinner) {
-             while (!compTurnUsed && tilesUsed < 9) {
-                 var random = Math.floor(Math.random() * 9) + 1;
-                 if (random == 1 && t1 == null) {
-                     $('#tic1').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t1 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 2 && t2 == null) {
-                     $('#tic2').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t2 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 3 && t3 == null) {
-                     $('#tic3').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t3 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 4 && t4 == null) {
-                     $('#tic4').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t4 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 5 && t5 == null) {
-                     $('#tic5').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t5 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 6 && t6 == null) {
-                     $('#tic6').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t6 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 7 && t7 == null) {
-                     $('#tic7').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t7 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 8 && t8 == null) {
-                     $('#tic8').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t8 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
-                 if (random == 9 && t9 == null) {
-                     $('#tic9').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
-                     t9 = computersShape;
-                     compTurnUsed = true;
-                     not.innerHTML = "Your Turn!";
-                 }
+             not.innerHTML = "...";
+             turndelay = setTimeout(function() {
+                 while (!compTurnUsed && tilesUsed < 9) {
+                     var random = Math.floor(Math.random() * 9) + 1;
+                     if (random == 1 && t1 == null) {
+                         $('#tic1').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t1 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 2 && t2 == null) {
+                         $('#tic2').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t2 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 3 && t3 == null) {
+                         $('#tic3').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t3 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 4 && t4 == null) {
+                         $('#tic4').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t4 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 5 && t5 == null) {
+                         $('#tic5').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t5 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 6 && t6 == null) {
+                         $('#tic6').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t6 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 7 && t7 == null) {
+                         $('#tic7').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t7 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 8 && t8 == null) {
+                         $('#tic8').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t8 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
+                     if (random == 9 && t9 == null) {
+                         $('#tic9').css('background-image', 'url(stylesheet/' + computersShape + '.png)');
+                         t9 = computersShape;
+                         compTurnUsed = true;
+                         not.innerHTML = "Your Turn!";
+                     }
 
-             }
+                 }
+             }, 1500);
              tilesUsed = tilesUsed + 1;
 
              checkWin();
@@ -216,7 +220,7 @@ $(document).ready(function() {
          var not = document.getElementById("notify");
          if (t1 == t2 && t1 == t3 && t1 != null) {
              if (t1 == playersShape) {
-                window.location = "/win";
+                 addWin();
                  not.innerHTML = "You Win!";
              } else {
                  not.innerHTML = "Computer Wins!";
@@ -299,7 +303,14 @@ $(document).ready(function() {
      }
 
 
-    
+    function addWin(){
+        var url = "/win";
+        var req = new XMLHttpRequest();
+        req.open("GET", url, true);
+        req.send(null);
+
+    }
+
     function delayGame(){
         $('#gameTable').css('visibility', 'hidden');
         var not = document.getElementById("notify");
